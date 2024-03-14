@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+
+    }
+
+    body {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      color: #fff;
+      background: url('./images/bg-intro-desktop.png');
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: hsl(0, 100%, 74%);
+      z-index: -1;
+    }
+
+    .content h1 {
+      font-size: 48px;
+      line-height: 121%;
+      margin-bottom: 2rem;
+    }
+
+    .trial {
+      width: 33.75rem;
+      height: 3.75rem;
+      border-radius: 0.625rem;
+      color: rgba(255, 255, 255, 0.6);
+      background: #5D54A3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      box-shadow: 1px 4px 1px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    .trial strong {
+      color: #fff;
+    }
+
+    form {
+      width: 33.75rem;
+      height: auto;
+      padding: 2rem 0;
+      border-radius: 0.625rem;
+      background: #FFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: 4px 4px 1px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    form input {
+      width: 28.75rem;
+      height: 3.5rem;
+      border-radius: .5rem;
+      color: hsl(249, 10%, 26%);
+      border: 2px solid #F1F1F1;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin: .5rem 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    form input::placeholder {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    form button {
+      width: 28.75rem;
+      height: 3.5rem;
+      color: #FFF;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border: none;
+      border-radius: 0.5rem;
+      background: #37CC8A;
+      box-shadow: 0px -4px 1px 0px rgba(0, 0, 0, 0.25) inset;
+      text-transform: uppercase;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+    form p {
+      color: hsl(246, 25%, 77%);
+      font-size: .71rem;
+      font-weight: 500;
+      margin-top: .8rem;
+    }
+
+    form p span {
+      color: hsl(0, 100%, 74%);
+      font-weight: 600;
+    }
+
+    .error-message {
+      position: relative;
+      color: hsl(0, 100%, 74%);
+      text-align: right;
+      font-style: italic;
+    }
+
+    /*******************************************/
+
+    @media screen and (max-width: 720px) {
+      .container {
+        display: grid;
+        place-items: center;
+        height: auto;
+        padding: 2rem 0;
+        text-align: center;
+        margin: auto;
+        grid-template-columns: repeat(1, 1fr);
+        background: url('./images/bg-intro-mobile.png');
+      }
+
+      .content h1 {
+        font-size: 28px;
+        margin-top: 2rem;
+      }
+
+      .content p {
+        margin: 2rem;
+      }
+
+      .trial {
+        width: 70vw;
+        margin: auto;
+        margin-bottom: 2rem;
+      }
+
+      .trial p {
+        font-size: .8rem;
+        width: 50%;
+      }
+
+      form {
+        width: 327px;
+        margin: auto;
+      }
+
+      form input,
+      form button {
+        width: 85%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Main Screen -->
+  <main class="container">
+    <div class="content">
+      <h1>
+        Learn to code by <br /> watching others
+      </h1>
+      <p>See how experienced developers solve problems in real-time. <br /> Watching scripted tutorials is great,
+        but understanding how <br />developers think is invaluable.</p>
+    </div>
+    <div class="form_main">
+      <div class="trial">
+        <p>
+          <strong> Try it free 7 days </strong> then $20/mo. thereafter
+        </p>
+      </div>
+      <form id="myForm" novalidate>
+        <div class="input_group">
+          <input type="text" id="First Name" name="firstname" placeholder="First Name" required />
+          <p class="error-message"></p>
+        </div>
+        <div class="input_group">
+          <input type="text" id="Last Name" name="lastname" placeholder="Last Name" required />
+          <p class="error-message"></p>
+        </div>
+        <div class="input_group">
+          <input type="email" id="Email" name="email" placeholder="Email" required />
+          <p class="error-message"></p>
+        </div>
+        <div class="input_group">
+          <input type="password" id="Password" name="password" placeholder="Password" required />
+          <p class="error-message"></p>
+        </div>
+        <button type="submit" onclick="FormSubmit()">
+          Claim your free trial
+        </button>
+        <p>
+          By clicking the button, you are agreeing to our <span>Terms and Services</span>
+        </p>
+      </form>
+
+    </div>
+  </main>
+
+  <script>
+
+    const form = document.getElementById("myForm");
+
+    form.addEventListener("submit", function (event) {
+
+      const inputs = form.querySelectorAll("input[required]");
+      let hasErrors = false;
+
+      for (let i = 0; i < inputs.length; i++) {
+        const input = inputs[i];
+        const errorMessage = input.nextElementSibling; // Access the next paragraph
+
+        if (input.type === "email") {
+          // Specific email validation with detailed error message
+          const isValidEmail = validateEmail(input.value); // Call the new validation function with the modified regex
+          if (!isValidEmail) {
+            errorMessage.textContent = `**${input.value}** is not a valid email address`;
+            errorMessage.classList.remove("hidden");
+            hasErrors = true;
+          } else {
+            // Email is valid, clear previous error (if any)
+            errorMessage.textContent = "";
+            errorMessage.classList.add("hidden");
+          }
+        } else {
+          // Check if other fields are empty or failed browser validation (if applicable)
+          if (input.value === "" || !input.checkValidity()) {
+            errorMessage.textContent = `${input.id} cannot be empty`;
+            errorMessage.classList.remove("hidden");
+            hasErrors = true;
+          } else {
+            errorMessage.textContent = "";
+            errorMessage.classList.add("hidden");
+          }
+        }
+      }
+
+      if (!hasErrors) {
+        alert("Succefully! Your data has been saved!");
+      }
+
+      if (!hasErrors) {
+        console.log("Form submitted successfully!");
+      }
+    });
+
+    function validateEmail(email) {
+      const emailRegex = /^([^\s@]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return emailRegex.test(email);
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>
